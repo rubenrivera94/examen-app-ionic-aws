@@ -1,0 +1,14 @@
+<!-- src/app/shared/components/menu/menu.component.html -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button *ngFor="let p of pages" [routerLink]="p.url" routerDirection="root">
+          <ion-icon [name]="p.icon"></ion-icon>
+          <ion-label>{{ p.title }}</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+      <ion-router-outlet></ion-router-outlet>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

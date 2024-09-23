@@ -1,0 +1,12 @@
+.centered-button {
+    display: flex;
+    justify-content: center; // Centra horizontalmente el botón
+    align-items: center;
+    height: 100%; // Centra verticalmente el botón (opcional si quieres un centrado total)
+}
+
+ion-button {
+    width: 60%; // Ajusta el ancho del botón
+    max-width: 300px; // Limita el ancho máximo del botón
+    margin: auto;
+}

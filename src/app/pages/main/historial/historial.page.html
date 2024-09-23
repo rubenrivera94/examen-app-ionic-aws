@@ -1,0 +1,18 @@
+<app-header backButton="/scan" title="Historial"></app-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let historial of service.guardados" (click)="abrir(historial)" detail>
+      <ion-icon slot="start" [name]="historial.icon" color="primary">
+      </ion-icon>
+      <ion-label>
+        <h2>{{historial.text}}</h2>
+        <p>{{historial.created | date: 'medium'}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<app-menu></app-menu>
+

@@ -1,0 +1,18 @@
+// For information on how to create your own theme, please see:
+// http://ionicframework.com/docs/theming/
+:root {
+    --ion-background-color: #f8f9fa;
+    --ion-color-primary: #3880ff;
+   
+}
+
+.custom-input {
+    --border-color: #dddddd;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-radius: 8px;
+}
+
+.auth-submit{
+        --border-radius: 8px;
+    }

@@ -1,0 +1,27 @@
+<app-header backButton="" title="Resumen de Cuenta"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div class="saldo-container">
+    <h2>Saldo Disponible</h2>
+    <h1 class="saldo">{{ saldo | currency: 'USD' }}</h1>
+  </div>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Historial de Movimientos</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let movimiento of historialMovimientos">
+      <ion-icon slot="start" [name]="movimiento.icono" color="primary"></ion-icon>
+      <ion-label>
+        <h2>{{ movimiento.descripcion }}</h2>
+        <p>{{ movimiento.fecha | date: 'medium' }}</p>
+        <p [ngClass]="{'positivo': movimiento.monto >= 0, 'negativo': movimiento.monto < 0}">
+          {{ movimiento.monto | currency: 'USD' }}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<app-menu></app-menu> 

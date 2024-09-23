@@ -1,0 +1,33 @@
+<app-header backButton="/pantalla-principal" title="Agregar Cliente"></app-header>
+<br><br>
+<ion-content class="ion-padding">
+  <div class="">
+    <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
+
+      <!--===== Name =====-->
+      <app-custom-input autocomplete="nombre" icon="person-outline" [control]="form.controls.nombre" type="text"
+        label="Nombre"></app-custom-input>
+      <div class="validators" *ngIf="form.controls.nombre.errors && form.controls.nombre.touched">
+        <div *ngIf="form.controls.nombre.errors?.['required']">El nombre es requerido</div>
+        <div *ngIf="form.controls.nombre.errors?.['minlenght']">El nombre debe tener almenos 4 caracteres</div>
+      </div>
+      
+      <!--===== Email =====-->
+      <app-custom-input autocomplete="email" icon="mail-outline" [control]="form.controls.email" type="email"
+        label="Email"></app-custom-input>
+      <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+        <div *ngIf="form.controls.email.errors?.['required']">El email es requerido</div>
+        <div *ngIf="form.controls.email.errors?.['email']">Ingrese un email valido</div>
+      </div>
+
+      <!--===== Botón Crear Cliente =====-->
+      <ion-button expand="block" mode="md" class="auth-submit ion-margin" type="submit" [disabled]="form.invalid">
+        Crear Cliente
+        <ion-icon slot="end" name="person-add-outline"></ion-icon>
+      </ion-button>
+
+    </form>
+  </div>
+</ion-content>
+
+<app-menu></app-menu>
